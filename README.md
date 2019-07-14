@@ -15,6 +15,12 @@ I plan to add more experiments to this repository.
 
 PyTorch (Tested on PyTorch 1.1 on Python 3.6)
 
+## Steps for running experiments:
+    1. Clone this repository, and change the directory to the folder.
+    2. To start training, In a command line, enter: `python3 experiment.py`
+    3. To use the Periodic Activation layers in your projects, copy the file `periodic_activations.py` and import: 
+        `from periodic_activations import SineActivation`
+
 ## To-Do
     1. Adding experiments on popular datasets
     2. Adding couple of Periodic activations like Triangle function and Modulo
