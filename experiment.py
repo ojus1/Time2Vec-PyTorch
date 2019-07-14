@@ -44,8 +44,3 @@ if __name__ == "__main__":
 
     pipe = ToyPipeline(Model("cos", 12))
     pipe.train()
-
-    pipe = ToyPipeline(Model("mod", 12))
-    pipe.train()
-
-    
