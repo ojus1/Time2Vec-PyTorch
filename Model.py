@@ -1,4 +1,4 @@
-from periodic_activations import SineActivation, CosineActivation, ModuloActivation
+from periodic_activations import SineActivation, CosineActivation
 from Data import ToyDataset
 from torch import nn
 import torch

@@ -1,5 +1,5 @@
 from Data import ToyDataset
-from periodic_activations import SineActivation, CosineActivation, ModuloActivation
+from periodic_activations import SineActivation, CosineActivation
 import torch
 from torch.utils.data import DataLoader
 from Pipeline import AbstractPipelineClass
@@ -14,11 +14,11 @@ class ToyPipeline(AbstractPipelineClass):
         loss_fn = nn.CrossEntropyLoss()
 
         dataset = ToyDataset()
-        dataloader = DataLoader(dataset, batch_size=12, shuffle=False)
+        dataloader = DataLoader(dataset, batch_size=128, shuffle=False)
 
-        optimizer = torch.optim.Adam(self.model.parameters(), lr=1e-3)
+        optimizer = torch.optim.Adam(self.model.parameters(), lr=1e-5)
 
-        num_epochs = 10
+        num_epochs = 100
 
         for ep in range(num_epochs):
             for x, y in dataloader:
@@ -39,8 +39,8 @@ class ToyPipeline(AbstractPipelineClass):
         return x
 
 if __name__ == "__main__":
-    pipe = ToyPipeline(Model("sin", 12))
+    pipe = ToyPipeline(Model("sin", 42))
     pipe.train()
 
-    pipe = ToyPipeline(Model("cos", 12))
-    pipe.train()
+    #pipe = ToyPipeline(Model("cos", 12))
+    #pipe.train()
