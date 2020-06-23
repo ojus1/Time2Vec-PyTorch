@@ -14,9 +14,9 @@ class ToyPipeline(AbstractPipelineClass):
         loss_fn = nn.CrossEntropyLoss()
 
         dataset = ToyDataset()
-        dataloader = DataLoader(dataset, batch_size=128, shuffle=False)
+        dataloader = DataLoader(dataset, batch_size=2048, shuffle=False)
 
-        optimizer = torch.optim.Adam(self.model.parameters(), lr=1e-5)
+        optimizer = torch.optim.Adam(self.model.parameters(), lr=1e-3)
 
         num_epochs = 100
 

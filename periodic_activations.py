@@ -4,13 +4,12 @@ import numpy as np
 import math
 
 def t2v(tau, f, out_features, w, b, w0, b0, arg=None):
-    t1 = tau.repeat(1, out_features-1)
     if arg:
-        v1 = f(torch.mm(t1, torch.t(w)) + b, arg)
+        v1 = f(torch.matmul(tau, w) + b, arg)
     else:
         #print(w.shape, t1.shape, b.shape)
-        v1 = f(torch.mm(t1, torch.t(w)) + b)
-    v2 = w0 * tau + b0
+        v1 = f(torch.matmul(tau, w) + b)
+    v2 = torch.matmul(tau, w0) + b0
     #print(v1.shape)
     return torch.cat([v1, v2], 1)
 
