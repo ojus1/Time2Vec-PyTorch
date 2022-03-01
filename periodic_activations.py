@@ -18,9 +18,9 @@ class SineActivation(nn.Module):
         super(SineActivation, self).__init__()
         self.out_features = out_features
         self.w0 = nn.parameter.Parameter(torch.randn(in_features, 1))
-        self.b0 = nn.parameter.Parameter(torch.randn(in_features, 1))
+        self.b0 = nn.parameter.Parameter(torch.randn(1))
         self.w = nn.parameter.Parameter(torch.randn(in_features, out_features-1))
-        self.b = nn.parameter.Parameter(torch.randn(in_features, out_features-1))
+        self.b = nn.parameter.Parameter(torch.randn(out_features-1))
         self.f = torch.sin
 
     def forward(self, tau):
@@ -31,9 +31,9 @@ class CosineActivation(nn.Module):
         super(CosineActivation, self).__init__()
         self.out_features = out_features
         self.w0 = nn.parameter.Parameter(torch.randn(in_features, 1))
-        self.b0 = nn.parameter.Parameter(torch.randn(in_features, 1))
+        self.b0 = nn.parameter.Parameter(torch.randn(1))
         self.w = nn.parameter.Parameter(torch.randn(in_features, out_features-1))
-        self.b = nn.parameter.Parameter(torch.randn(in_features, out_features-1))
+        self.b = nn.parameter.Parameter(torch.randn(out_features-1))
         self.f = torch.cos
 
     def forward(self, tau):
