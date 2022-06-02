@@ -1,6 +1,6 @@
 # Time2Vec: Learning a Vector representation of Time
 
-This is an attempt of reproducing the paper !["Time2Vec: Learning a Vector Representation of Time"](https://arxiv.org/pdf/1907.05321.pdf) in PyTorch.
+This is an attempt of reproducing the paper ["Time2Vec: Learning a Vector Representation of Time"](https://arxiv.org/pdf/1907.05321.pdf) in PyTorch.
 For Pretrained model and package to encode ISO Date-Time to vectors, please check [Date2Vec](https://github.com/ojus1/Date2Vec) which uses this package to implement the above functionality.
 
 ## Summary
